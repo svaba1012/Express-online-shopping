@@ -1,0 +1,34 @@
+<div class="col">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <img
+            src="<%= article.imgUrl %> "
+            alt="cant"
+            class="card-image-left"
+            width="100%"
+          />
+        </div>
+
+        <div class="col">
+          <h4 class="card-title"><%= article.name %></h4>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <b>Cloth type: </b> <%=article.type%>
+            </li>
+            <!-- <li class="list-group-item">
+            <b>Cloth sex: </b> <%= article.sexText %>
+          </li> -->
+            <!-- <li class="list-group-item">
+            <b>Price: </b> <%= article.price %>&dollar;
+          </li> -->
+            <li class="list-group-item">
+              <b>Description: </b><%= article.desc.substring(0,50) + "..." %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

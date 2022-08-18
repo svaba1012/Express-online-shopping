@@ -1,0 +1,67 @@
+<div class="col">
+  <div class="card shadow-sm" id="articleId<%= article.id %>">
+    <img
+      src="<%= article.imgUrl %> "
+      alt="cant"
+      class="card-image-top"
+      width="100%"
+    />
+
+    <!-- <svg
+      class="bd-placeholder-img card-img-top"
+      width="100%"
+      height="225"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Placeholder: Thumbnail"
+      preserveAspectRatio="xMidYMid slice"
+      focusable="false"
+      
+      >
+      <title>Placeholder</title>
+      
+      <rect width="100%" height="100%" fill="#55595c" />
+      <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+    </svg> -->
+
+    <div class="card-body">
+      <form action="/cart" method="post">
+        <h4 class="card-title"><%= article.name %></h4>
+        <input
+          type="text"
+          name="articleId"
+          id=""
+          style="display: none"
+          value="<%= article.id %>"
+        />
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>Cloth type: </b> <%=article.type%></li>
+          <li class="list-group-item">
+            <b>Cloth sex: </b> <%= article.sexText %>
+          </li>
+          <li class="list-group-item">
+            <b>Price: </b> <%= article.price %>&dollar;
+          </li>
+          <li class="list-group-item">
+            <b>Description: </b><%= article.desc.substring(0,50) + "..." %>
+          </li>
+        </ul>
+
+        <p class="card-text"></p>
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- <div class="btn-group">
+            <button type="button" class="btn btn-outline-secondary">
+              View more...
+            </button> -->
+
+          <button type="submit" class="btn btn-lg btn-outline-success">
+            <i class="fa-solid fa-cart-plus"></i>
+          </button>
+          <!-- </div> -->
+          <small style="color: green">Available</small>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

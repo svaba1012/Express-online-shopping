@@ -1,0 +1,101 @@
+<%- include("partials/header.ejs") %> 
+  <body>
+    <%- include("partials/navbar.ejs") %>
+
+    <main>
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Cloth online shopping</h1>
+            <p class="lead text-muted">
+              Take a look at our new cloth collection. Only few seconds takes you to buy our high quality clothes. 
+            </p>
+            <!-- <p>
+              <a href="#" class="btn btn-primary my-2">Main call to action</a>
+              <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+            </p> -->
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <div class="container">
+          <h3 id = filter-title>Filter</h3>
+          <button class=" btn btn-secondary btn-lg btn-toggle-filter"><i class="fa-solid fa-bars"></i></button>
+
+          <div class="filter filter-form-disabled">
+            <form action="/" method="post">
+            <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <h5>Cloths for: </h5>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" name="isMale" checked>
+                <label class="form-check-label" for="inlineCheckbox1">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input name="isFemale" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" checked>
+                <label class="form-check-label" for="inlineCheckbox2">Female</label>
+              </div>
+            </div>
+              <div class="col-lg-3 col-md-6">
+              <h5>Type of clothes: </h5>
+              <select class="form-select " aria-label="Default select example" name="type">
+                <option selected value="all">All</option>
+                <option value="shirt">Shirt</option>
+                <option value="trousers">Trousers</option>
+                <option value="shoes">Shoes</option>
+                <option value="jacket">Jacket</option>
+                <option value="shorts">Shorts</option>
+                  <div class="row">
+                    <div class="col-6">
+                      
+                    </div>
+                  </div>
+              </select>
+              </div>
+          
+              <div class="col-lg-6 col-lg">
+              <h5>Price range: </h5>
+              <div class="row">
+                <div class="col-6">
+                <input type="number" name="minValue" id="" placeholder="Minimum price" class="value-input">  
+                </div>
+                <div class="col-6">
+                <input type="number" name="maxValue" id="" placeholder="Minimum price" class="value-input">  
+                </div>
+              </div>
+              
+              
+              </div>
+              <div class="row">
+                <div class="col-6">
+                <button class="btn btn-primary btn-lg" type="submit">Filter</button>
+                </div>
+              </div>
+              
+              </div>
+
+
+              
+
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <% articles.forEach(article => { %>
+              <%- include("partials/card.ejs", {article: article}) %> 
+             <% }); %> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+<%- include("partials/footer.ejs") %> 
+    
+  </body>
+</html>
